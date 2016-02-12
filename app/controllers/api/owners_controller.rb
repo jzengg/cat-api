@@ -12,9 +12,9 @@ class Api::OwnersController < ApplicationController
   def show
     @owner = Owner.find_by(id: params[:id])
     if @owner
-      render json: @owner, root: false
+      render json: @owner, root: false, status: :ok
     else
-      render json: { error: "Could not find an owner with id #{params[:id]}" }, status: 404
+      render json: { error: "Could not find an owner with id #{params[:id]}" }, status: :not_found
     end
   end
 

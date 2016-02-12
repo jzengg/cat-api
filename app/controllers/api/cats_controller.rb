@@ -11,9 +11,9 @@ class Api::CatsController < ApplicationController
   def show
     @cat = Cat.find_by(id: params[:id])
     if @cat
-      render json: @cat, root: false
+      render json: @cat, root: false, status: :ok
     else
-      render json: { error: "Could not find a cat with id #{params[:id]}" }, status: 404
+      render json: { error: "Could not find a cat with id #{params[:id]}" }, status: :not_found
     end
   end
 
