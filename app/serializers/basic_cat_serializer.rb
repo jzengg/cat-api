@@ -1,5 +1,5 @@
 class BasicCatSerializer < ActiveModel::Serializer
-  attributes :name, :id
+  attributes :id, :name
 
 
 end
